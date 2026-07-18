@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Worksheet: Expressions & Variables | Education Matters</title>
+<style>
+  @page { margin: 0.4in; size: letter; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #222; line-height: 1.5; padding: 0.3in; max-width: 8.5in; margin: 0 auto; }
+  
+  /* ── Print Optimisation ── */
+  @media print { body { padding: 0; } .no-print { display: none !important; } }
+  .no-print { text-align: right; margin-bottom: 0.15in; }
+  .no-print button { background: #22c55e; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 10pt; }
+  
+  /* ── Header ── */
+  .ws-header { text-align: center; border-bottom: 3px solid #22c55e; padding-bottom: 0.15in; margin-bottom: 0.2in; }
+  .ws-header .ws-icon { font-size: 28pt; }
+  .ws-header h1 { font-size: 18pt; color: #111; margin: 0.05in 0; }
+  .ws-header .ws-meta { font-size: 9pt; color: #666; display: flex; justify-content: center; gap: 0.2in; flex-wrap: wrap; }
+  .ws-header .ws-meta span { background: #f0f0ff; padding: 2px 10px; border-radius: 12px; color: #22c55e; font-weight: 600; }
+  
+  /* ── Visual Schedule ── */
+  .v-schedule { display: flex; justify-content: center; gap: 0.08in; margin-bottom: 0.2in; flex-wrap: wrap; }
+  .v-schedule-item { display: flex; align-items: center; gap: 3px; background: #f8f8fa; border: 1px solid #e0e0e8; border-radius: 20px; padding: 3px 10px; font-size: 8pt; }
+  .vs-num { background: #22c55e; color: #fff; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 7pt; }
+  .vs-icon { font-size: 10pt; }
+  .vs-label { color: #555; font-weight: 500; }
+  
+  /* ── Concept Visual ── */
+  .concept-box { background: #f8f8ff; border-left: 4px solid #22c55e; padding: 0.12in 0.15in; margin-bottom: 0.2in; border-radius: 0 8px 8px 0; }
+  .concept-box strong { color: #333; }
+  .concept-box .viz { display: block; font-size: 10pt; color: #555; margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 4px; }
+  
+  /* ── Steps ── */
+  .step { display: flex; gap: 0.1in; margin-bottom: 0.12in; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 0.1in 0.12in; }
+  .step-icon { font-size: 20pt; flex-shrink: 0; width: 0.35in; text-align: center; }
+  .step-body { flex: 1; }
+  .step-header { display: flex; align-items: center; gap: 0.08in; margin-bottom: 2px; }
+  .step-number { background: #22c55e; color: #fff; font-weight: 700; font-size: 8pt; padding: 1px 8px; border-radius: 10px; }
+  .step-title { font-weight: 700; font-size: 10pt; color: #333; }
+  .step-desc { font-size: 9.5pt; color: #555; margin: 0; }
+  
+  /* ── Section Headers ── */
+  .ws-section { margin-bottom: 0.18in; }
+  .section-header { display: flex; align-items: center; gap: 0.06in; margin-bottom: 0.06in; }
+  .section-icon { font-size: 14pt; }
+  .section-label { font-weight: 700; font-size: 10.5pt; color: #333; }
+  .section-instr { font-size: 9pt; color: #666; margin-bottom: 0.08in; font-style: italic; }
+  
+  /* ── Sort Grid ── */
+  .sort-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.1in; margin-bottom: 0.15in; }
+  .sort-col { border: 2px solid #ddd; border-radius: 8px; padding: 0.08in; min-height: 1.8in; }
+  .sort-col-header { text-align: center; font-weight: 700; font-size: 10pt; margin-bottom: 0.05in; padding-bottom: 0.04in; border-bottom: 1px solid #eee; }
+  
+  /* ── Sort Items ── */
+  .sort-item { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 5px 8px; margin-bottom: 4px; }
+  .sort-icon { font-size: 14pt; }
+  .sort-label { flex: 1; font-size: 9pt; color: #444; }
+  .sort-target { font-size: 8pt; color: #22c55e; font-weight: 600; background: #f0f0ff; padding: 2px 8px; border-radius: 8px; min-width: 0.7in; text-align: center; }
+  
+  /* ── Match ── */
+  .match-row { display: grid; grid-template-columns: 1fr 0.6in 1.8fr; align-items: center; margin-bottom: 0.06in; }
+  .match-left { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9.5pt; }
+  .match-arrow { text-align: center; font-size: 10pt; color: #aaa; }
+  .match-right { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9pt; color: #555; }
+  
+  /* ── Draw Box ── */
+  .draw-box { border: 2px dashed #ccc; border-radius: 8px; min-height: 1.5in; margin-top: 0.05in; background: repeating-linear-gradient(transparent, transparent 0.3in, #f5f5f5 0.3in, #f5f5f5 0.31in); }
+  
+  /* ── Teacher ── */
+  .teacher-box { background: #fef9fb; border: 1px solid #fce4ec; border-radius: 8px; padding: 0.12in 0.15in; margin: 0.2in 0; display: flex; gap: 0.1in; font-size: 9pt; color: #555; }
+  .teacher-icon { font-size: 16pt; }
+  
+  /* ── Writing lines ── */
+  .write-line { border-bottom: 1px solid #ddd; height: 0.3in; margin-bottom: 0.04in; }
+  .answer-blank { display: inline-block; border-bottom: 2px solid #22c55e; min-width: 0.5in; padding: 0 0.08in; }
+  
+  /* ── Footer ── */
+  .ws-footer { text-align: center; font-size: 8pt; color: #999; margin-top: 0.2in; border-top: 1px solid #eee; padding-top: 0.08in; }
+  
+  /* ── Checklist ── */
+  .check-item { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+  .check-box { width: 14px; height: 14px; border: 2px solid #22c55e; border-radius: 3px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button onclick="window.print()">🖨️ Print This Worksheet</button>
+</div>
+
+<div class="ws-header">
+  <div class="ws-icon">✖️</div>
+  <h1>Expressions & Variables</h1>
+  <div class="ws-meta">
+    <span>📐 Math</span>
+    <span>📚 Grade 6-7</span>
+    <span>EE</span>
+    <span>🏫 District 75</span>
+  </div>
+</div>
+
+<div class="v-schedule">
+  <div class="v-schedule-item"><span class="vs-num">1</span><span class="vs-icon">🔍</span><span class="vs-label">Mystery Numbers</span></div><div class="v-schedule-item"><span class="vs-num">2</span><span class="vs-icon">🍕</span><span class="vs-label">Pizza Math</span></div><div class="v-schedule-item"><span class="vs-num">3</span><span class="vs-icon">🔢</span><span class="vs-label">Solve the Mystery</span></div><div class="v-schedule-item"><span class="vs-num">4</span><span class="vs-icon">✂️</span><span class="vs-label">Cut & Match Expressions</span></div><div class="v-schedule-item"><span class="vs-num">5</span><span class="vs-icon">✏️</span><span class="vs-label">Write Your Own</span></div>
+</div>
+
+<div class="concept-box">
+  <strong>🧠 Big Idea:</strong> Writing and evaluating algebraic expressions with variables
+  <span class="viz">📊 Visual Guide: Visual equation: 🧁 = cupcake, 🧁 + 3 = ? shows variable (🧁) as unknown number</span>
+</div>
+
+<div class="ws-section">
+  <div class="section-header"><span class="section-icon">📋</span> <span class="section-label">Follow These Steps:</span></div>
+  
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 1</span>
+          <span class="step-title">Mystery Numbers</span>
+        </div>
+        <p class="step-desc">A variable is a letter that stands for an UNKNOWN number. If x = 5, then x + 3 = 8. If y = 10, then y - 4 = 6.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🍕</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 2</span>
+          <span class="step-title">Pizza Math</span>
+        </div>
+        <p class="step-desc">Pizza costs $12. Each topping costs $2. Expression: 12 + 2t. If t=3 (3 toppings): 12 + 2(3) = $18. If t=1: ___. If t=5: ___.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🔢</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 3</span>
+          <span class="step-title">Solve the Mystery</span>
+        </div>
+        <p class="step-desc">If n + 5 = 12, what is n? n = ___. If 3 × y = 21, y = ___. If x - 4 = 8, x = ___.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">✂️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 4</span>
+          <span class="step-title">Cut & Match Expressions</span>
+        </div>
+        <p class="step-desc">Cut out the expressions. Match each to its value when n = 4.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">✏️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 5</span>
+          <span class="step-title">Write Your Own</span>
+        </div>
+        <p class="step-desc">A burger costs $8. Each extra patty costs $2. Write the expression: ___. How much for 2 extra patties? $___.</p>
+      </div>
+    </div>
+</div>
+
+
+    <div class="ws-section sort-section">
+      <div class="section-header"><span class="section-icon">🍪</span> <span class="section-label">Ratio Recipes — Fill in the Blanks</span></div>
+      <p class="section-instr">👉 Use the ratio to figure out how much of each ingredient you need.</p>
+      <div class="sort-item"><span class="sort-icon">🍕</span><span class="sort-label">12 + 2t, when t = 2...</span><span class="sort-target">[  12 + 4 = 16  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🍔</span><span class="sort-label">8 + 2p, when p = 3...</span><span class="sort-target">[  8 + 6 = 14  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🎫</span><span class="sort-label">5 + 3n, when n = 2...</span><span class="sort-target">[  5 + 6 = 11  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🍦</span><span class="sort-label">4 + 1.50s, when s = 2...</span><span class="sort-target">[  4 + 3 = 7  ]</span></div>
+    </div>
+
+
+
+    <div class="ws-section match-section">
+      <div class="section-header"><span class="section-icon">🔗</span> <span class="section-label">Match It — Draw a Line From Each Word to Its Meaning</span></div>
+      <p class="section-instr">👉 Draw a line connecting each word or phrase on the LEFT to the correct meaning on the RIGHT.</p>      <div class="match-row"><div class="match-left"><strong>Variable</strong></div><div class="match-arrow">────→</div><div class="match-right">A letter that stands for an unknown number</div></div>
+      <div class="match-row"><div class="match-left"><strong>Expression</strong></div><div class="match-arrow">────→</div><div class="match-right">A math phrase: numbers + operations</div></div>
+      <div class="match-row"><div class="match-left"><strong>Evaluate</strong></div><div class="match-arrow">────→</div><div class="match-right">Find the value when you know the variable</div></div>
+      <div class="match-row"><div class="match-left"><strong>n + 5</strong></div><div class="match-arrow">────→</div><div class="match-right">Expression with variable n</div></div>
+    </div>
+
+
+
+    <div class="ws-section draw-section">
+      <div class="section-header"><span class="section-icon">✏️</span> <span class="section-label">Draw & Label — Show What You Know</span></div>
+      <p class="section-instr">👉 Use the box below to draw your answer. Label your drawing with words or arrows.</p>
+      <div class="draw-box"></div>
+    </div>
+
+
+    <div class="teacher-box">
+      <div class="teacher-icon">👩‍🏫</div>
+      <div>
+        <strong style="color:#22c55e;">Teacher Guide — UDL Adaptations</strong><br>
+        Use a cup with hidden coins as the variable. Add more coins, count total, then find how many were hidden. For sensory: balance scales.<br>
+        <span style="font-size:0.85rem; color:#888;">🧠 Sensory: 🪙 Hide coins in a closed hand = variable. Open and count. 🧱 Use blocks: cup hides some = n. Add 3 more. Total is n+3.</span>
+      </div>
+    </div>
+
+<div class="ws-footer">
+📄 Education Matters · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE<br>
+<span style="font-size:7.5pt;">Common Core State Standards — Mathematics — Standard EE: Standard reference · Generated Jun 30, 2026</span>
+</div>
+
+</body>
+</html>

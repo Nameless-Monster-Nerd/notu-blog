@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>You Use Algorithms Every Day — You Just Didn't Know It! | Education Matters Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#0a0a0f; color:#d0d0d0; line-height:1.8; }
+.bg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;
+  background:radial-gradient(ellipse at 20% 30%,rgba(99,102,241,0.06) 0%,transparent 50%),
+              radial-gradient(ellipse at 80% 70%,rgba(236,72,153,0.06) 0%,transparent 50%); }
+.container { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:2rem 1.5rem; }
+.back { margin-bottom:1.5rem; }
+.back a { color:#818cf8; text-decoration:none; font-size:0.9rem; }
+.back a:hover { color:#f472b6; }
+
+/* Header */
+.post-header { text-align:center; padding:2rem 0; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:2rem; }
+.post-header .pi { font-size:2.5rem; margin-bottom:0.5rem; }
+.post-header h1 { font-size:1.8rem; font-weight:800;
+  background:linear-gradient(135deg,#818cf8,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:0.5rem; line-height:1.3; }
+.post-header .meta { color:#888; font-size:0.85rem; display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap; }
+.post-header .meta span { background:rgba(255,255,255,0.04); padding:0.2rem 0.7rem; border-radius:20px; }
+
+/* Article Body */
+.article-body { margin-bottom:1.5rem; }
+.article-body h2 { font-size:1.3rem; color:#e0e0e0; margin:1.5rem 0 0.8rem; font-weight:700; }
+.article-body h3 { font-size:1.1rem; color:#d0d0d0; margin:1.2rem 0 0.5rem; font-weight:600; }
+.article-body p { color:#b0b0b0; margin-bottom:0.8rem; font-size:1rem; }
+.article-body strong { color:#c0c0ff; }
+.article-body ul, .article-body ol { color:#b0b0b0; margin:0.5rem 0 0.8rem 1.5rem; }
+.article-body li { margin-bottom:0.3rem; }
+.article-body blockquote { border-left:3px solid #818cf8; padding:0.6rem 1rem; margin:0.8rem 0; background:rgba(129,140,248,0.05); border-radius:0 8px 8px 0; color:#c0c0d0; font-style:italic; }
+
+/* Tip Box */
+.tip-box { background:rgba(99,102,241,0.06); border:1px solid rgba(99,102,241,0.12); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1.5rem; color:#c0c0e0; font-size:0.95rem; line-height:1.6; }
+.tip-box strong { color:#a0a0ff; }
+
+/* Activity Section */
+.activity-section { background:rgba(244,114,182,0.06); border:1px solid rgba(244,114,182,0.12); border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; }
+.activity-header { font-size:1rem; font-weight:700; color:#f472b6; margin-bottom:1rem; }
+.activity-section h2 { font-size:1.1rem; color:#e0e0e0; margin:1rem 0 0.5rem; font-weight:600; }
+.activity-section p { color:#b0a0b0; margin-bottom:0.6rem; font-size:0.95rem; }
+.activity-section strong { color:#d0b0d0; }
+.activity-section table { width:100%; border-collapse:collapse; margin:0.8rem 0; }
+.activity-section td { border:1px solid rgba(255,255,255,0.1); padding:0.4rem 0.6rem; color:#b0a0b0; font-size:0.9rem; }
+.activity-section th { border:1px solid rgba(255,255,255,0.1); padding:0.4rem 0.6rem; color:#d0b0d0; font-weight:600; font-size:0.9rem; background:rgba(244,114,182,0.04); }
+
+/* Lesson Links */
+.lesson-links { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; text-align:center; }
+.ll-header { font-size:1rem; font-weight:700; color:#e0e0e0; margin-bottom:1rem; }
+.ll-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; }
+.ll-btn { display:inline-block; padding:0.6rem 1.2rem; border-radius:8px; font-weight:600; font-size:0.85rem; text-decoration:none; transition:opacity 0.2s; }
+.ll-btn:hover { opacity:0.8; }
+.ll-lesson { background:linear-gradient(135deg,#818cf8,#6366f1); color:#fff; }
+.ll-worksheet { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#c0c0c0; }
+.ll-subject { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#888; }
+
+/* Print button */
+.print-btn { display:inline-block; padding:0.5rem 1rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#aaa; cursor:pointer; font-size:0.85rem; margin-bottom:1.5rem; }
+.print-btn:hover { background:rgba(255,255,255,0.1); color:#fff; }
+
+footer { text-align:center; padding:2rem 0; border-top:1px solid rgba(255,255,255,0.06); color:#666; font-size:0.85rem; margin-top:2rem; }
+footer a { color:#818cf8; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+<div class="back"><a href="/">← Back to Education Matters</a> · <a href="/blog/">Blog</a></div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<div class="post-header">
+  <div class="pi">🧩</div>
+  <h1>You Use Algorithms Every Day — You Just Didn't Know It!</h1>
+  <div class="meta">
+    <span>Education Matters Writer</span>
+    <span>📅 June 30, 2026</span>
+    <span>⏱️ 3 min</span>
+    <span>📂 Technology</span>
+  </div>
+  <p style="color:#888;font-size:0.95rem;margin-top:0.8rem;max-width:600px;margin-left:auto;margin-right:auto;">Brushing your teeth, making a sandwich, tying your shoes — it's all algorithms!</p>
+</div>
+
+
+  <div class="article-body">
+    ### What Is an Algorithm? (It's Not as Fancy as It Sounds!)
+
+An **algorithm** is just a set of step-by-step instructions to complete a task. That's it!
+
+**Your morning routine is an algorithm:**
+1. Wake up
+2. Brush teeth
+3. Get dressed
+4. Eat breakfast
+5. Pack your bag
+
+If you skip a step or do them in the wrong order — things get messy! Same with computers.
+
+  </div>
+  <div class="tip-box">
+    💡 **Try this:** Write the algorithm for making a peanut butter sandwich. Give it to a friend and have them follow it EXACTLY. If you wrote "put peanut butter on bread" but didn't say which side... you might get a sticky surprise!
+
+  </div>
+  <div class="activity-section">
+    <div class="activity-header">🧪 Hands-On Learning Activity</div>
+    ## 🐞 Learning Activity: Find the Bug!
+
+This algorithm has a BUG (a mistake). Can you find it?
+
+**Algorithm for making a sandwich:**
+1. Open the bread bag
+2. Take out two slices of bread
+3. Put the bread on a plate
+4. Close the bread bag
+5. **Eat the sandwich**
+
+🤔 Wait... where's the peanut butter? Where's the jelly? That's the bug! Fix the algorithm by adding the missing steps.
+
+**Your turn:** Write a 4-step algorithm for tying your shoes. Test it by reading it aloud and pretending to follow it!
+
+  </div>
+  <div class="lesson-links">
+    <div class="ll-header">📚 Related Learning Resources</div>
+    <div class="ll-buttons">
+      <a href="/worksheets/technology/algorithms-everyday.html" class="ll-btn ll-lesson">📖 Open Interactive Lesson →</a>
+      <a href="/worksheets/technology/algorithms-worksheet.html" class="ll-btn ll-worksheet">📄 Download Worksheet →</a>
+      <a href="/worksheets/technology/" class="ll-btn ll-subject">📂 Browse All Technology Resources →</a>
+    </div>
+  </div>
+
+<footer>
+<a href="/">Education Matters</a> · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE<br>
+<span style="font-size:0.8rem; color:#555;">Published June 30, 2026</span>
+</footer>
+</div>
+</body>
+</html>
