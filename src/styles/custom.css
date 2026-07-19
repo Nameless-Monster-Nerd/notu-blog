@@ -1,0 +1,72 @@
+/* notu.us — Custom Brand Theme
+   Gold: #d4af37 | Purple: #8a2be2 | Orange: #ff7a30 */
+
+/* Hero / splash page branding */
+.hero {
+  --sl-color-hero-text: #d4af37;
+}
+
+.hero h1 {
+  font-family: 'Georgia', 'Playfair Display', serif;
+  color: #d4af37 !important;
+}
+
+.hero .tagline {
+  color: #e0e0e0 !important;
+  font-size: 1.2em;
+}
+
+/* Accent colors */
+:root {
+  --sl-color-accent-low: #2a1a05;
+  --sl-color-accent: #d4af37;
+  --sl-color-accent-high: #f0d060;
+  --sl-color-text-accent: #d4af37;
+}
+
+/* Sidebar active item */
+[aria-current="page"] {
+  color: #d4af37 !important;
+  border-left-color: #d4af37 !important;
+}
+
+/* Links */
+a {
+  color: #d4af37;
+}
+
+a:hover {
+  color: #f0d060;
+}
+
+/* Card styling for splash page */
+.card {
+  border: 1px solid #2a2a2a;
+  background: #0d0d0e;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: #d4af37;
+}
+
+/* Section icons in sidebar */
+nav a span:first-child {
+  font-size: 1.1em;
+}
+
+/* Custom footer branding */
+.sl-markdown-content .contact-block {
+  margin-top: 2em;
+  padding: 1em;
+  background: #0d0d0e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #888;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.sl-markdown-content .contact-block strong {
+  color: #d4af37;
+}
