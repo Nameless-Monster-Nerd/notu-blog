@@ -37,6 +37,7 @@ export default defineConfig({
             { label: 'Bengali Heritage', slug: 'culture-lab/bengali-heritage' },
             { label: 'Bronx Arts & Community', slug: 'culture-lab/bronx-arts' },
             { label: 'Dance as Healing', slug: 'culture-lab/dance-as-healing' },
+            { label: '🎭 Kathak Series', slug: 'culture-lab/kathak-history-part-1' },
           ],
         },
         {
