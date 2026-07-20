@@ -38,6 +38,7 @@ export default defineConfig({
             { label: 'Bronx Arts & Community', slug: 'culture-lab/bronx-arts' },
             { label: 'Dance as Healing', slug: 'culture-lab/dance-as-healing' },
             { label: '🎭 Kathak Series', slug: 'culture-lab/kathak-history-part-1' },
+                      { label: '🎭 Part 2', slug: 'culture-lab/kathak-history-part-2' },
           ],
         },
         {
