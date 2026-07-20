@@ -98,7 +98,33 @@ export default defineConfig({
         },
         {
           label: '🛠️ Studio Skills',
-          items: [{ autogenerate: { directory: 'studio-skills' } }],
+          items: [
+            { label: 'Overview', slug: 'studio-skills' },
+            {
+              label: '🔇 Soundproofing',
+              collapsed: true,
+              items: [
+                { label: 'Under $200', slug: 'studio-skills/soundproof-under-200' },
+                { label: 'DIY Acoustic Panels', slug: 'studio-skills/diy-acoustic-panels' },
+                { label: 'The $65/hr Model', slug: 'studio-skills/soundproof-space-model' },
+              ],
+            },
+            {
+              label: '🎙️ Recording',
+              collapsed: true,
+              items: [
+                { label: 'Mic Placement', slug: 'studio-skills/mic-placement' },
+                { label: 'Home Studio Setup', slug: 'studio-skills/home-studio-setup' },
+              ],
+            },
+            {
+              label: '🎛️ Production',
+              collapsed: true,
+              items: [
+                { label: 'Mixing for Beginners', slug: 'studio-skills/mixing-basics' },
+              ],
+            },
+          ],
         },
         {
           label: '📰 Blog',
