@@ -8,7 +8,18 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'notu.us — Mr. Nas\'s Briefcase',
-      description: 'Educational materials, lesson plans, culture lab essays, music & dance — from Mr. Nas of Mohikontok Sound Lab',
+      description: 'Free STEAM worksheets, lesson plans, Bengali culture essays, Bronx music studio, and BaFA dance classes — from Mr. Nas of Mohikontok Sound Lab in the Bronx, NY.',
+      head: [
+        // Open Graph / Social meta tags
+        { tag: 'meta', attrs: { property: 'og:type', content: 'website' } },
+        { tag: 'meta', attrs: { property: 'og:site_name', content: 'notu.us — Mr. Nas\'s Briefcase' } },
+        { tag: 'meta', attrs: { property: 'og:locale', content: 'en_US' } },
+        { tag: 'meta', attrs: { name: 'twitter:card', content: 'summary_large_image' } },
+        { tag: 'meta', attrs: { name: 'twitter:site', content: '@mohikontok' } },
+        // SEO
+        { tag: 'meta', attrs: { name: 'robots', content: 'index, follow' } },
+        { tag: 'meta', attrs: { name: 'keywords', content: 'STEAM worksheets, Bronx music studio, Bengali culture, lesson plans, Mohikontok Sound Lab, Mr. Nas, free educational resources, Bronx arts, soundproofing guide, dance classes Bronx' } },
+      ],
       logo: {
         src: '/src/assets/notu-logo.svg',
         replacesTitle: true,
