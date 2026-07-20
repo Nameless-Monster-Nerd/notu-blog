@@ -40,11 +40,47 @@ export default defineConfig({
           label: '📚 Lesson Plans',
           items: [
             { label: 'Overview', slug: 'lesson-plans' },
-            { label: '🔬 Science', slug: 'lesson-plans/science' },
-            { label: '📐 Math', slug: 'lesson-plans/math' },
-            { label: '⚙️ Engineering', slug: 'lesson-plans/engineering' },
-            { label: '🎨 Arts', slug: 'lesson-plans/arts' },
-            { label: '💻 Technology', slug: 'lesson-plans/technology' },
+            {
+              label: '🔬 Science',
+              collapsed: true,
+              items: [
+                { label: 'Overview', slug: 'lesson-plans/science' },
+                { label: 'Matter & Particles', slug: 'lesson-plans/science/matter-particles' },
+                { label: 'Energy in Motion', slug: 'lesson-plans/science/energy-in-motion' },
+              ],
+            },
+            {
+              label: '📐 Math',
+              collapsed: true,
+              items: [
+                { label: 'Overview', slug: 'lesson-plans/math' },
+                { label: 'Ratios & Recipes', slug: 'lesson-plans/math/ratios-recipes' },
+              ],
+            },
+            {
+              label: '⚙️ Engineering',
+              collapsed: true,
+              items: [
+                { label: 'Overview', slug: 'lesson-plans/engineering' },
+                { label: 'Simple Machines', slug: 'lesson-plans/engineering/simple-machines' },
+              ],
+            },
+            {
+              label: '🎨 Arts',
+              collapsed: true,
+              items: [
+                { label: 'Overview', slug: 'lesson-plans/arts' },
+                { label: 'Colors & Emotions', slug: 'lesson-plans/arts/colors-emotions' },
+              ],
+            },
+            {
+              label: '💻 Technology',
+              collapsed: true,
+              items: [
+                { label: 'Overview', slug: 'lesson-plans/technology' },
+                { label: 'Algorithms', slug: 'lesson-plans/technology/algorithms-everyday' },
+              ],
+            },
           ],
         },
         {
