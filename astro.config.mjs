@@ -38,7 +38,14 @@ export default defineConfig({
         },
         {
           label: '📚 Lesson Plans',
-          items: [{ autogenerate: { directory: 'lesson-plans' } }],
+          items: [
+            { label: 'Overview', slug: 'lesson-plans' },
+            { label: '🔬 Science', slug: 'lesson-plans/science' },
+            { label: '📐 Math', slug: 'lesson-plans/math' },
+            { label: '⚙️ Engineering', slug: 'lesson-plans/engineering' },
+            { label: '🎨 Arts', slug: 'lesson-plans/arts' },
+            { label: '💻 Technology', slug: 'lesson-plans/technology' },
+          ],
         },
         {
           label: '🛠️ Studio Skills',
