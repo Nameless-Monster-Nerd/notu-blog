@@ -60,6 +60,8 @@ export default defineConfig({
                 { label: 'Overview', slug: 'lesson-plans/science' },
                 { label: 'Matter & Particles', slug: 'lesson-plans/science/matter-particles' },
                 { label: 'Energy in Motion', slug: 'lesson-plans/science/energy-in-motion' },
+                { label: 'Waves, Sound & Light', slug: 'lesson-plans/science/waves-sound-light' },
+                { label: 'Earth Systems', slug: 'lesson-plans/science/earth-systems' },
               ],
             },
             {
@@ -68,6 +70,7 @@ export default defineConfig({
               items: [
                 { label: 'Overview', slug: 'lesson-plans/math' },
                 { label: 'Ratios & Recipes', slug: 'lesson-plans/math/ratios-recipes' },
+                { label: 'Number System', slug: 'lesson-plans/math/number-system' },
               ],
             },
             {

@@ -18,15 +18,21 @@
 ### Technology
 - ✅ Algorithms in Everyday Life (`algorithms-everyday.mdx`) — links to `algorithms-everyday.html` + `algorithms-worksheet.html`
 
-## Remaining (15 topics)
+## Created (9 topics — July 23, 2026)
 
 ### Science
-- [ ] Waves, Sound & Light
-- [ ] Earth Systems
+- ✅ Waves, Sound & Light (`waves-sound-light.mdx`) — links to `waves-sound-light.html` + `waves-sound-light-worksheet.html`
+- ✅ Earth Systems (`earth-systems.mdx`) — links to `earth-systems.html` + `earth-systems-worksheet.html`
+
+### Math
+- ✅ Number System (`number-system.mdx`) — links to `number-system.html` + `number-system-worksheet.html`
+
+## Remaining (12 topics)
+
+### Science
 - [ ] Ecosystems
 
 ### Math
-- [ ] Number System
 - [ ] Expressions & Equations
 - [ ] Geometry & Shapes
 
