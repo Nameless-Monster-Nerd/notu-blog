@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Worksheet: Waves — Sound & Light | Education Matters</title>
+<style>
+  @page { margin: 0.4in; size: letter; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #222; line-height: 1.5; padding: 0.3in; max-width: 8.5in; margin: 0 auto; }
+  
+  /* ── Print Optimisation ── */
+  @media print { body { padding: 0; } .no-print { display: none !important; } }
+  .no-print { text-align: right; margin-bottom: 0.15in; }
+  .no-print button { background: #6366f1; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 10pt; }
+  
+  /* ── Header ── */
+  .ws-header { text-align: center; border-bottom: 3px solid #6366f1; padding-bottom: 0.15in; margin-bottom: 0.2in; }
+  .ws-header .ws-icon { font-size: 28pt; }
+  .ws-header h1 { font-size: 18pt; color: #111; margin: 0.05in 0; }
+  .ws-header .ws-meta { font-size: 9pt; color: #666; display: flex; justify-content: center; gap: 0.2in; flex-wrap: wrap; }
+  .ws-header .ws-meta span { background: #f0f0ff; padding: 2px 10px; border-radius: 12px; color: #6366f1; font-weight: 600; }
+  
+  /* ── Visual Schedule ── */
+  .v-schedule { display: flex; justify-content: center; gap: 0.08in; margin-bottom: 0.2in; flex-wrap: wrap; }
+  .v-schedule-item { display: flex; align-items: center; gap: 3px; background: #f8f8fa; border: 1px solid #e0e0e8; border-radius: 20px; padding: 3px 10px; font-size: 8pt; }
+  .vs-num { background: #6366f1; color: #fff; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 7pt; }
+  .vs-icon { font-size: 10pt; }
+  .vs-label { color: #555; font-weight: 500; }
+  
+  /* ── Concept Visual ── */
+  .concept-box { background: #f8f8ff; border-left: 4px solid #6366f1; padding: 0.12in 0.15in; margin-bottom: 0.2in; border-radius: 0 8px 8px 0; }
+  .concept-box strong { color: #333; }
+  .concept-box .viz { display: block; font-size: 10pt; color: #555; margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 4px; }
+  
+  /* ── Steps ── */
+  .step { display: flex; gap: 0.1in; margin-bottom: 0.12in; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 0.1in 0.12in; }
+  .step-icon { font-size: 20pt; flex-shrink: 0; width: 0.35in; text-align: center; }
+  .step-body { flex: 1; }
+  .step-header { display: flex; align-items: center; gap: 0.08in; margin-bottom: 2px; }
+  .step-number { background: #6366f1; color: #fff; font-weight: 700; font-size: 8pt; padding: 1px 8px; border-radius: 10px; }
+  .step-title { font-weight: 700; font-size: 10pt; color: #333; }
+  .step-desc { font-size: 9.5pt; color: #555; margin: 0; }
+  
+  /* ── Section Headers ── */
+  .ws-section { margin-bottom: 0.18in; }
+  .section-header { display: flex; align-items: center; gap: 0.06in; margin-bottom: 0.06in; }
+  .section-icon { font-size: 14pt; }
+  .section-label { font-weight: 700; font-size: 10.5pt; color: #333; }
+  .section-instr { font-size: 9pt; color: #666; margin-bottom: 0.08in; font-style: italic; }
+  
+  /* ── Sort Grid ── */
+  .sort-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.1in; margin-bottom: 0.15in; }
+  .sort-col { border: 2px solid #ddd; border-radius: 8px; padding: 0.08in; min-height: 1.8in; }
+  .sort-col-header { text-align: center; font-weight: 700; font-size: 10pt; margin-bottom: 0.05in; padding-bottom: 0.04in; border-bottom: 1px solid #eee; }
+  
+  /* ── Sort Items ── */
+  .sort-item { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 5px 8px; margin-bottom: 4px; }
+  .sort-icon { font-size: 14pt; }
+  .sort-label { flex: 1; font-size: 9pt; color: #444; }
+  .sort-target { font-size: 8pt; color: #6366f1; font-weight: 600; background: #f0f0ff; padding: 2px 8px; border-radius: 8px; min-width: 0.7in; text-align: center; }
+  
+  /* ── Match ── */
+  .match-row { display: grid; grid-template-columns: 1fr 0.6in 1.8fr; align-items: center; margin-bottom: 0.06in; }
+  .match-left { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9.5pt; }
+  .match-arrow { text-align: center; font-size: 10pt; color: #aaa; }
+  .match-right { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9pt; color: #555; }
+  
+  /* ── Draw Box ── */
+  .draw-box { border: 2px dashed #ccc; border-radius: 8px; min-height: 1.5in; margin-top: 0.05in; background: repeating-linear-gradient(transparent, transparent 0.3in, #f5f5f5 0.3in, #f5f5f5 0.31in); }
+  
+  /* ── Teacher ── */
+  .teacher-box { background: #fef9fb; border: 1px solid #fce4ec; border-radius: 8px; padding: 0.12in 0.15in; margin: 0.2in 0; display: flex; gap: 0.1in; font-size: 9pt; color: #555; }
+  .teacher-icon { font-size: 16pt; }
+  
+  /* ── Writing lines ── */
+  .write-line { border-bottom: 1px solid #ddd; height: 0.3in; margin-bottom: 0.04in; }
+  .answer-blank { display: inline-block; border-bottom: 2px solid #6366f1; min-width: 0.5in; padding: 0 0.08in; }
+  
+  /* ── Footer ── */
+  .ws-footer { text-align: center; font-size: 8pt; color: #999; margin-top: 0.2in; border-top: 1px solid #eee; padding-top: 0.08in; }
+  
+  /* ── Checklist ── */
+  .check-item { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+  .check-box { width: 14px; height: 14px; border: 2px solid #6366f1; border-radius: 3px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button onclick="window.print()">🖨️ Print This Worksheet</button>
+</div>
+
+<div class="ws-header">
+  <div class="ws-icon">🌊</div>
+  <h1>Waves — Sound & Light</h1>
+  <div class="ws-meta">
+    <span>🔬 Science</span>
+    <span>📚 Grade 6-8</span>
+    <span>PS4.A</span>
+    <span>🏫 District 75</span>
+  </div>
+</div>
+
+<div class="v-schedule">
+  <div class="v-schedule-item"><span class="vs-num">1</span><span class="vs-icon">🔍</span><span class="vs-label">Learn About Waves</span></div><div class="v-schedule-item"><span class="vs-num">2</span><span class="vs-icon">🌊</span><span class="vs-label">Ripple Experiment</span></div><div class="v-schedule-item"><span class="vs-num">3</span><span class="vs-icon">🎵</span><span class="vs-label">High vs Low</span></div><div class="v-schedule-item"><span class="vs-num">4</span><span class="vs-icon">🔗</span><span class="vs-label">Match It</span></div><div class="v-schedule-item"><span class="vs-num">5</span><span class="vs-icon">✏️</span><span class="vs-label">Draw a Wave</span></div>
+</div>
+
+<div class="concept-box">
+  <strong>🧠 Big Idea:</strong> Sound needs a medium, light doesn't; wavelength and frequency
+  <span class="viz">📊 Visual Guide: Wave diagram: labeled crest, trough, wavelength, with sound wave (air molecules) vs light wave (empty space)</span>
+</div>
+
+<div class="ws-section">
+  <div class="section-header"><span class="section-icon">📋</span> <span class="section-label">Follow These Steps:</span></div>
+  
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 1</span>
+          <span class="step-title">Learn About Waves</span>
+        </div>
+        <p class="step-desc">Waves carry energy. Sound waves travel through air, water, solids — but NOT through empty space. Light waves can travel through empty space (that's how we see the sun!).</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🌊</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 2</span>
+          <span class="step-title">Ripple Experiment</span>
+        </div>
+        <p class="step-desc">Fill a bowl with water. Drop ONE pebble. Watch the circles spread. Now drop TWO pebbles. What happens when the circles meet?</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🎵</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 3</span>
+          <span class="step-title">High vs Low</span>
+        </div>
+        <p class="step-desc">Hum a LOW note. Feel your chest vibrate. Now hum a HIGH note. Feel your head vibrate. Where does low go? Where does high go?</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🔗</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 4</span>
+          <span class="step-title">Match It</span>
+        </div>
+        <p class="step-desc">Draw a line from each word to its meaning.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">✏️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 5</span>
+          <span class="step-title">Draw a Wave</span>
+        </div>
+        <p class="step-desc">Draw a wave with labeled crest (top), trough (bottom), and wavelength (distance between two crests).</p>
+      </div>
+    </div>
+</div>
+
+
+    <div class="ws-section sort-section">
+      <div class="section-header"><span class="section-icon">✂️</span> <span class="section-label">Cut & Sort — Glue Each Item Into the Correct Column</span></div>
+      <p class="section-instr">👉 Cut out the boxes below. Read each one. Glue it into the correct category.</p>
+      <div class="sort-grid-3">
+        <div class="sort-col" style="border-color:#6366f1; background:rgba(99,102,241,0.04);">
+          <div class="sort-col-header" style="color:#6366f1;">🧊 SOLID</div>
+        </div>
+        <div class="sort-col" style="border-color:#06b6d4; background:rgba(6,182,212,0.04);">
+          <div class="sort-col-header" style="color:#06b6d4;">💧 LIQUID</div>
+        </div>
+        <div class="sort-col" style="border-color:#a855f7; background:rgba(168,85,247,0.04);">
+          <div class="sort-col-header" style="color:#a855f7;">💨 GAS</div>
+        </div>
+      </div>
+      <div class="sort-item"><span class="sort-icon">🗣️</span><span class="sort-label">Sound waves — need air to travel</span><span class="sort-target">[  NEEDS MEDIUM  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">💡</span><span class="sort-label">Light waves — can travel in space</span><span class="sort-target">[  NO MEDIUM NEEDED  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🎺</span><span class="sort-label">Low pitch — long wavelength</span><span class="sort-target">[  LOW FREQUENCY  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🐦</span><span class="sort-label">High pitch — short wavelength</span><span class="sort-target">[  HIGH FREQUENCY  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🌊</span><span class="sort-label">Ocean wave — moves through water</span><span class="sort-target">[  NEEDS MEDIUM  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">📻</span><span class="sort-label">Radio wave — travels from tower to phone</span><span class="sort-target">[  NO MEDIUM NEEDED  ]</span></div>
+    </div>
+
+
+
+    <div class="ws-section match-section">
+      <div class="section-header"><span class="section-icon">🔗</span> <span class="section-label">Match It — Draw a Line From Each Word to Its Meaning</span></div>
+      <p class="section-instr">👉 Draw a line connecting each word or phrase on the LEFT to the correct meaning on the RIGHT.</p>      <div class="match-row"><div class="match-left"><strong>Sound wave</strong></div><div class="match-arrow">────→</div><div class="match-right">Needs air, water, or solid to travel</div></div>
+      <div class="match-row"><div class="match-left"><strong>Light wave</strong></div><div class="match-arrow">────→</div><div class="match-right">Can travel through empty space</div></div>
+      <div class="match-row"><div class="match-left"><strong>Wavelength</strong></div><div class="match-arrow">────→</div><div class="match-right">Distance between two wave crests</div></div>
+      <div class="match-row"><div class="match-left"><strong>Frequency</strong></div><div class="match-arrow">────→</div><div class="match-right">How many waves pass per second</div></div>
+    </div>
+
+
+
+    <div class="ws-section draw-section">
+      <div class="section-header"><span class="section-icon">✏️</span> <span class="section-label">Draw & Label — Show What You Know</span></div>
+      <p class="section-instr">👉 Use the box below to draw your answer. Label your drawing with words or arrows.</p>
+      <div class="draw-box"></div>
+    </div>
+
+
+    <div class="teacher-box">
+      <div class="teacher-icon">👩‍🏫</div>
+      <div>
+        <strong style="color:#6366f1;">Teacher Guide — UDL Adaptations</strong><br>
+        Use a Slinky to show wave motion. For sensory: use a tuning fork dipped in water to show vibrations. For non-verbal: point to high vs low on a frequency chart.<br>
+        <span style="font-size:0.85rem; color:#888;">🧠 Sensory: 🎵 Hum different pitches. Feel where they resonate in your body. 🌊 Make ripples in water and watch them spread.</span>
+      </div>
+    </div>
+
+<div class="ws-footer">
+📄 Education Matters · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE<br>
+<span style="font-size:7.5pt;">NGSS — Next Generation Science Standards — Standard PS4.A: Standard reference · Generated Jun 30, 2026</span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Matters — Universal Design for Autism & Spectrum Learners</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0a0a0f;
+      color: #d0d0d0;
+      line-height: 1.6;
+    }
+    .bg {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(236, 72, 153, 0.06) 0%, transparent 50%);
+    }
+    .container { position: relative; z-index: 1; max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+    
+    /* Header */
+    header { text-align: center; padding: 3rem 0 2rem; }
+    h1 {
+      font-size: 2.8rem; font-weight: 800;
+      background: linear-gradient(135deg, #818cf8, #f472b6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+    .tagline { font-size: 1.2rem; color: #888; margin-bottom: 0.3rem; }
+    .sub {
+      font-size: 0.95rem; color: #666;
+      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+      margin-top: 0.8rem;
+    }
+    .sub span { background: rgba(255,255,255,0.04); padding: 0.2rem 0.8rem; border-radius: 20px; }
+
+    /* Mission */
+    .mission {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; padding: 2rem;
+      margin-bottom: 2.5rem; text-align: center;
+    }
+    .mission h2 { font-size: 1.4rem; color: #e0e0e0; margin-bottom: 1rem; font-weight: 600; }
+    .mission p { color: #999; max-width: 700px; margin: 0 auto; font-size: 1rem; }
+    .mission strong { color: #c0c0c0; }
+
+    /* Cards */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } }
+    
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px; padding: 1.5rem;
+      transition: border-color 0.3s;
+    }
+    .card:hover { border-color: rgba(129, 140, 248, 0.2); }
+    .card .emoji { font-size: 2rem; margin-bottom: 0.8rem; }
+    .card h3 { font-size: 1.1rem; color: #e0e0e0; margin-bottom: 0.5rem; font-weight: 600; }
+    .card p { font-size: 0.9rem; color: #888; line-height: 1.6; }
+    .card a { color: #818cf8; text-decoration: none; font-weight: 500; }
+    .card a:hover { color: #f472b6; }
+
+    /* Studio Photo Gallery */
+    .gallery-title { font-size: 1.2rem; font-weight: 600; color: #e0e0e0; margin-bottom: 1rem; text-align: center; }
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .gallery img {
+      width: 100%; height: auto; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .gallery img:hover { transform: scale(1.02); border-color: rgba(129, 140, 248, 0.3); }
+    @media (max-width: 600px) { .gallery { grid-template-columns: 1fr; } }
+
+    /* Resources Section */
+    .resources {
+      margin-bottom: 2.5rem;
+    }
+    .resources h2 { font-size: 1.2rem; color: #e0e0e0; margin-bottom: 1rem; text-align: center; font-weight: 600; }
+    .resource-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 640px) { .resource-list { grid-template-columns: 1fr; } }
+    .resource-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 1.2rem;
+      text-align: center;
+    }
+    .resource-item .r-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .resource-item h4 { font-size: 0.95rem; color: #d0d0d0; margin-bottom: 0.3rem; font-weight: 600; }
+    .resource-item p { font-size: 0.8rem; color: #777; }
+    .resource-item a { color: #818cf8; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+
+    /* Blog */
+    .blog-section { margin-bottom: 2.5rem; }
+    .blog-section h2 { font-size: 1.2rem; color: #e0e0e0; margin-bottom: 1rem; text-align: center; font-weight: 600; }
+    .blog-list { display: flex; flex-direction: column; gap: 0.8rem; }
+    .blog-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px; padding: 1rem 1.2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .blog-item .b-title { font-size: 0.95rem; color: #c0c0c0; font-weight: 500; }
+    .blog-item .b-meta { font-size: 0.8rem; color: #666; }
+    .blog-item .b-link { color: #818cf8; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
+    .blog-item .b-link:hover { color: #f472b6; }
+
+    /* Footer */
+    footer {
+      text-align: center; padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: #666; font-size: 0.85rem;
+    }
+    footer a { color: #818cf8; text-decoration: none; }
+    footer a:hover { color: #f472b6; }
+    footer .phone { font-size: 1.1rem; color: #999; margin: 0.5rem 0; }
+
+    .btn {
+      display: inline-block; padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, #818cf8, #f472b6);
+      color: #fff; border-radius: 8px; text-decoration: none;
+      font-weight: 600; font-size: 0.85rem; transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <div class="container">
+    <header>
+      <h1>Education Matters</h1>
+      <p class="tagline">Universal Design for Autism & Spectrum Learners</p>
+      <div class="sub">
+        <span>🧩 District 75 Aligned</span>
+        <span>🔬 STEAM Worksheets</span>
+        <span>🎧 Sensory-Safe Studio</span>
+        <span>📚 UDL Framework</span>
+      </div>
+    </header>
+
+    <!-- Mission -->
+    <div class="mission">
+      <h2>🌉 Where Inclusive Education Meets Creative Space</h2>
+      <p>
+        <strong>Education Matters</strong> is a bridge between <strong>universally designed STEAM education</strong> for autism and spectrum learners and a <strong>soundproof sensory-safe studio</strong> in the Bronx. We create interactive worksheets aligned with <strong>NYC District 75</strong> standards and provide a real-world space where learning comes alive through experience.
+      </p>
+    </div>
+
+    <!-- Main Services -->
+    <div class="grid">
+      <div class="card">
+        <div class="emoji">📄</div>
+        <h3>STEAM Worksheets</h3>
+        <p>District 75-aligned, universally designed PDF worksheets for middle school. Science, Technology, Engineering, Arts, Math — each with multiple means of engagement, representation, and expression.</p>
+        <p style="margin-top:0.8rem;"><a href="/worksheets">Browse Worksheets →</a></p>
+      </div>
+      <div class="card">
+        <div class="emoji">🎧</div>
+        <h3>Bronx Sound Lab</h3>
+        <p>Soundproof sensory-safe studio at 1389 Kearney Ave. $65/hr. RGBW 16M color lighting, room for movement, zero outside noise. A space where spectrum learners can create, record, and regulate.</p>
+        <p style="margin-top:0.8rem;"><a href="/blog/the-bruckner-war.html">Read Our Story →</a></p>
+      </div>
+      <div class="card">
+        <div class="emoji">🧠</div>
+        <h3>Sensory Room Design</h3>
+        <p>Our soundproof space doubles as a sensory regulation room. Mattress floor for vestibular input, LED chromotherapy, healing frequency acoustics — designed for emotional development.</p>
+        <p style="margin-top:0.8rem;"><a href="/blog/sensory-room">Learn About Sensory Design →</a></p>
+      </div>
+      <div class="card">
+        <div class="emoji">👩‍🏫</div>
+        <h3>For Teachers & Parents</h3>
+        <p>Navigable, predictable, visually clear worksheets. Each PDF includes teacher guides, visual schedules, and multi-modal instructions. Built for classroom, homeschool, or therapy settings.</p>
+        <p style="margin-top:0.8rem;"><a href="/worksheets/templates">View Teacher Guide →</a></p>
+      </div>
+    </div>
+
+    <!-- Studio Photos -->
+    <p class="gallery-title">📸 Bronx Sound Lab — 1389 Kearney Ave</p>
+    <div class="gallery">
+      <img src="wall_1.png" alt="Studio Wall 1 — Bronx Sound Lab" loading="lazy">
+      <img src="wall_2.png" alt="Studio Wall 2 — Bronx Sound Lab" loading="lazy">
+    </div>
+
+    <!-- Resources -->
+    <div class="resources">
+      <h2>📚 Learning Resources</h2>
+      <div class="resource-list">
+        <div class="resource-item">
+          <div class="r-icon">🔬</div>
+          <h4>Science</h4>
+          <p>Hands-on experiments, visual inquiry</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/science">View →</a></p>
+        </div>
+        <div class="resource-item">
+          <div class="r-icon">💻</div>
+          <h4>Technology</h4>
+          <p>Digital literacy, coding basics</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/technology">View →</a></p>
+        </div>
+        <div class="resource-item">
+          <div class="r-icon">⚙️</div>
+          <h4>Engineering</h4>
+          <p>Design thinking, building challenges</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/engineering">View →</a></p>
+        </div>
+        <div class="resource-item">
+          <div class="r-icon">🎨</div>
+          <h4>Arts</h4>
+          <p>Creative expression, sensory art</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/arts">View →</a></p>
+        </div>
+        <div class="resource-item">
+          <div class="r-icon">📐</div>
+          <h4>Math</h4>
+          <p>Visual math, real-world problems</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/math">View →</a></p>
+        </div>
+        <div class="resource-item">
+          <div class="r-icon">🧩</div>
+          <h4>Teacher Guides</h4>
+          <p>UDL strategies, lesson plans</p>
+          <p style="margin-top:0.5rem;"><a href="/worksheets/templates">View →</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+        <!-- Blog -->
+    <div class="blog-section">
+      <h2>📖 Latest Articles</h2>
+      <p style="color:#888;font-size:0.85rem;margin-bottom:1rem;text-align:center;">Educational articles with hands-on activities — written for students, teachers, and parents.</p>
+      <div class="blog-list">
+        <div class="blog-item">
+          <div>
+            <div class="b-title">⚛️ Matter Adventures — Solids, Liquids, and Gases Are Everywhere!</div>
+            <div class="b-meta">Science · Jun 30, 2026 · 4 min</div>
+          </div>
+          <a href="/blog/matter-adventures.html" class="b-link">Read →</a>
+        </div>
+        <div class="blog-item">
+          <div>
+            <div class="b-title">🏃 Energy Is Everywhere — How a Bouncing Ball Teaches Physics</div>
+            <div class="b-meta">Science · Jun 30, 2026 · 4 min</div>
+          </div>
+          <a href="/blog/energy-everywhere.html" class="b-link">Read →</a>
+        </div>
+        <div class="blog-item">
+          <div>
+            <div class="b-title">🌿 Who Eats Who? The Secret Food Web in Your Backyard</div>
+            <div class="b-meta">Science · Jun 30, 2026 · 4 min</div>
+          </div>
+          <a href="/blog/ecosystem-connections.html" class="b-link">Read →</a>
+        </div>
+        <div class="blog-item">
+          <div>
+            <div class="b-title">🧩 You Use Algorithms Every Day — You Just Didn't Know It!</div>
+            <div class="b-meta">Technology · Jun 30, 2026 · 3 min</div>
+          </div>
+          <a href="/blog/algorithm-daily-life.html" class="b-link">Read →</a>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:1rem;">
+        <a href="/blog/" class="btn">📚 View All Articles →</a>
+      </div>
+    </div>
+<footer>
+      <p class="phone">📞 <a href="tel:+136****0809">(363) 777-0809</a></p>
+      <p>📍 1389 Kearney Ave, Bronx, NY 10465</p>
+      <p style="margin-top:0.5rem;">
+        <a href="https://mohikontok.com">mohikontok.com</a> · 
+        <a href="mailto:soundlab@mohikontok.com">soundlab@mohikontok.com</a>
+      </p>
+      <p style="margin-top:1rem;">🎧 $65/hr — Soundproof recording, rehearsal & sensory-safe space</p>
+    </footer>
+  </div>
+</body>
+</html>

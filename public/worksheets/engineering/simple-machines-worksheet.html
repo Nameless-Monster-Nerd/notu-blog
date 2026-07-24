@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Worksheet: Simple Machines Hunt | Education Matters</title>
+<style>
+  @page { margin: 0.4in; size: letter; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 11pt; color: #222; line-height: 1.5; padding: 0.3in; max-width: 8.5in; margin: 0 auto; }
+  
+  /* ── Print Optimisation ── */
+  @media print { body { padding: 0; } .no-print { display: none !important; } }
+  .no-print { text-align: right; margin-bottom: 0.15in; }
+  .no-print button { background: #f59e0b; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 10pt; }
+  
+  /* ── Header ── */
+  .ws-header { text-align: center; border-bottom: 3px solid #f59e0b; padding-bottom: 0.15in; margin-bottom: 0.2in; }
+  .ws-header .ws-icon { font-size: 28pt; }
+  .ws-header h1 { font-size: 18pt; color: #111; margin: 0.05in 0; }
+  .ws-header .ws-meta { font-size: 9pt; color: #666; display: flex; justify-content: center; gap: 0.2in; flex-wrap: wrap; }
+  .ws-header .ws-meta span { background: #f0f0ff; padding: 2px 10px; border-radius: 12px; color: #f59e0b; font-weight: 600; }
+  
+  /* ── Visual Schedule ── */
+  .v-schedule { display: flex; justify-content: center; gap: 0.08in; margin-bottom: 0.2in; flex-wrap: wrap; }
+  .v-schedule-item { display: flex; align-items: center; gap: 3px; background: #f8f8fa; border: 1px solid #e0e0e8; border-radius: 20px; padding: 3px 10px; font-size: 8pt; }
+  .vs-num { background: #f59e0b; color: #fff; border-radius: 50%; width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 7pt; }
+  .vs-icon { font-size: 10pt; }
+  .vs-label { color: #555; font-weight: 500; }
+  
+  /* ── Concept Visual ── */
+  .concept-box { background: #f8f8ff; border-left: 4px solid #f59e0b; padding: 0.12in 0.15in; margin-bottom: 0.2in; border-radius: 0 8px 8px 0; }
+  .concept-box strong { color: #333; }
+  .concept-box .viz { display: block; font-size: 10pt; color: #555; margin-top: 4px; border-top: 1px dashed #ddd; padding-top: 4px; }
+  
+  /* ── Steps ── */
+  .step { display: flex; gap: 0.1in; margin-bottom: 0.12in; background: #fafafa; border: 1px solid #e8e8e8; border-radius: 8px; padding: 0.1in 0.12in; }
+  .step-icon { font-size: 20pt; flex-shrink: 0; width: 0.35in; text-align: center; }
+  .step-body { flex: 1; }
+  .step-header { display: flex; align-items: center; gap: 0.08in; margin-bottom: 2px; }
+  .step-number { background: #f59e0b; color: #fff; font-weight: 700; font-size: 8pt; padding: 1px 8px; border-radius: 10px; }
+  .step-title { font-weight: 700; font-size: 10pt; color: #333; }
+  .step-desc { font-size: 9.5pt; color: #555; margin: 0; }
+  
+  /* ── Section Headers ── */
+  .ws-section { margin-bottom: 0.18in; }
+  .section-header { display: flex; align-items: center; gap: 0.06in; margin-bottom: 0.06in; }
+  .section-icon { font-size: 14pt; }
+  .section-label { font-weight: 700; font-size: 10.5pt; color: #333; }
+  .section-instr { font-size: 9pt; color: #666; margin-bottom: 0.08in; font-style: italic; }
+  
+  /* ── Sort Grid ── */
+  .sort-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.1in; margin-bottom: 0.15in; }
+  .sort-col { border: 2px solid #ddd; border-radius: 8px; padding: 0.08in; min-height: 1.8in; }
+  .sort-col-header { text-align: center; font-weight: 700; font-size: 10pt; margin-bottom: 0.05in; padding-bottom: 0.04in; border-bottom: 1px solid #eee; }
+  
+  /* ── Sort Items ── */
+  .sort-item { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 5px 8px; margin-bottom: 4px; }
+  .sort-icon { font-size: 14pt; }
+  .sort-label { flex: 1; font-size: 9pt; color: #444; }
+  .sort-target { font-size: 8pt; color: #f59e0b; font-weight: 600; background: #f0f0ff; padding: 2px 8px; border-radius: 8px; min-width: 0.7in; text-align: center; }
+  
+  /* ── Match ── */
+  .match-row { display: grid; grid-template-columns: 1fr 0.6in 1.8fr; align-items: center; margin-bottom: 0.06in; }
+  .match-left { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9.5pt; }
+  .match-arrow { text-align: center; font-size: 10pt; color: #aaa; }
+  .match-right { border: 1px solid #d0d0d8; border-radius: 6px; padding: 0.06in 0.1in; text-align: center; background: #fafafa; font-size: 9pt; color: #555; }
+  
+  /* ── Draw Box ── */
+  .draw-box { border: 2px dashed #ccc; border-radius: 8px; min-height: 1.5in; margin-top: 0.05in; background: repeating-linear-gradient(transparent, transparent 0.3in, #f5f5f5 0.3in, #f5f5f5 0.31in); }
+  
+  /* ── Teacher ── */
+  .teacher-box { background: #fef9fb; border: 1px solid #fce4ec; border-radius: 8px; padding: 0.12in 0.15in; margin: 0.2in 0; display: flex; gap: 0.1in; font-size: 9pt; color: #555; }
+  .teacher-icon { font-size: 16pt; }
+  
+  /* ── Writing lines ── */
+  .write-line { border-bottom: 1px solid #ddd; height: 0.3in; margin-bottom: 0.04in; }
+  .answer-blank { display: inline-block; border-bottom: 2px solid #f59e0b; min-width: 0.5in; padding: 0 0.08in; }
+  
+  /* ── Footer ── */
+  .ws-footer { text-align: center; font-size: 8pt; color: #999; margin-top: 0.2in; border-top: 1px solid #eee; padding-top: 0.08in; }
+  
+  /* ── Checklist ── */
+  .check-item { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+  .check-box { width: 14px; height: 14px; border: 2px solid #f59e0b; border-radius: 3px; flex-shrink: 0; }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button onclick="window.print()">🖨️ Print This Worksheet</button>
+</div>
+
+<div class="ws-header">
+  <div class="ws-icon">🔧</div>
+  <h1>Simple Machines Hunt</h1>
+  <div class="ws-meta">
+    <span>⚙️ Engineering</span>
+    <span>📚 Grade 6-7</span>
+    <span>ETS2.A</span>
+    <span>🏫 District 75</span>
+  </div>
+</div>
+
+<div class="v-schedule">
+  <div class="v-schedule-item"><span class="vs-num">1</span><span class="vs-icon">🔍</span><span class="vs-label">Learn the 6 Machines</span></div><div class="v-schedule-item"><span class="vs-num">2</span><span class="vs-icon">🔍</span><span class="vs-label">Machine Hunt</span></div><div class="v-schedule-item"><span class="vs-num">3</span><span class="vs-icon">⚙️</span><span class="vs-label">Lever Experiment</span></div><div class="v-schedule-item"><span class="vs-num">4</span><span class="vs-icon">✂️</span><span class="vs-label">Cut & Match</span></div><div class="v-schedule-item"><span class="vs-num">5</span><span class="vs-icon">✏️</span><span class="vs-label">Design a Machine</span></div>
+</div>
+
+<div class="concept-box">
+  <strong>🧠 Big Idea:</strong> The 6 simple machines and how they make work easier
+  <span class="viz">📊 Visual Guide: Visual grid of all 6 machines: Lever, Pulley, Wheel & Axle, Inclined Plane, Wedge, Screw</span>
+</div>
+
+<div class="ws-section">
+  <div class="section-header"><span class="section-icon">📋</span> <span class="section-label">Follow These Steps:</span></div>
+  
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 1</span>
+          <span class="step-title">Learn the 6 Machines</span>
+        </div>
+        <p class="step-desc">Simple machines make work easier! ① Lever (seesaw) ② Pulley (flag pole) ③ Wheel & Axle (bike) ④ Inclined Plane (ramp) ⑤ Wedge (knife) ⑥ Screw (jar lid)</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">🔍</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 2</span>
+          <span class="step-title">Machine Hunt</span>
+        </div>
+        <p class="step-desc">Walk around your home or classroom. Find at least one example of each simple machine. Write or draw where you found it.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">⚙️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 3</span>
+          <span class="step-title">Lever Experiment</span>
+        </div>
+        <p class="step-desc">Balance a ruler on a pencil (the fulcrum). Put 3 coins on ONE end. Push down on the OTHER end. Is it easier to push near the fulcrum or far away?</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">✂️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 4</span>
+          <span class="step-title">Cut & Match</span>
+        </div>
+        <p class="step-desc">Cut out the 6 machine pictures. Match each to its name and its job.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-icon">✏️</div>
+      <div class="step-body">
+        <div class="step-header">
+          <span class="step-number">Step 5</span>
+          <span class="step-title">Design a Machine</span>
+        </div>
+        <p class="step-desc">Invent your own machine using at least 2 simple machines. Draw it and label the simple machine parts.</p>
+      </div>
+    </div>
+</div>
+
+
+    <div class="ws-section sort-section">
+      <div class="section-header"><span class="section-icon">📊</span> <span class="section-label">Test Results — Record Your Bridge Data</span></div>
+      <p class="section-instr">👉 After testing each bridge, write how many pennies it held. Circle the strongest!</p>
+      <div class="sort-item"><span class="sort-icon">🔧</span><span class="sort-label">Lever — helps lift things</span><span class="sort-target">[  LEVER  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🪢</span><span class="sort-label">Pulley — lifts things with rope</span><span class="sort-target">[  PULLEY  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🛞</span><span class="sort-label">Wheel & Axle — helps things roll</span><span class="sort-target">[  WHEEL  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">📐</span><span class="sort-label">Ramp — helps move things up</span><span class="sort-target">[  RAMP  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🔪</span><span class="sort-label">Wedge — cuts or splits things</span><span class="sort-target">[  WEDGE  ]</span></div>
+      <div class="sort-item"><span class="sort-icon">🪛</span><span class="sort-label">Screw — holds things together</span><span class="sort-target">[  SCREW  ]</span></div>
+    </div>
+
+
+
+    <div class="ws-section match-section">
+      <div class="section-header"><span class="section-icon">🔗</span> <span class="section-label">Match It — Draw a Line From Each Word to Its Meaning</span></div>
+      <p class="section-instr">👉 Draw a line connecting each word or phrase on the LEFT to the correct meaning on the RIGHT.</p>      <div class="match-row"><div class="match-left"><strong>Lever</strong></div><div class="match-arrow">────→</div><div class="match-right">Seesaw, crowbar — pivots on a fulcrum</div></div>
+      <div class="match-row"><div class="match-left"><strong>Pulley</strong></div><div class="match-arrow">────→</div><div class="match-right">Flag pole, blinds — rope around a wheel</div></div>
+      <div class="match-row"><div class="match-left"><strong>Wheel & Axle</strong></div><div class="match-arrow">────→</div><div class="match-right">Bicycle, door knob</div></div>
+      <div class="match-row"><div class="match-left"><strong>Inclined Plane</strong></div><div class="match-arrow">────→</div><div class="match-right">Ramp, slide — a slanted surface</div></div>
+      <div class="match-row"><div class="match-left"><strong>Wedge</strong></div><div class="match-arrow">────→</div><div class="match-right">Knife, axe, zipper</div></div>
+      <div class="match-row"><div class="match-left"><strong>Screw</strong></div><div class="match-arrow">────→</div><div class="match-right">Jar lid, light bulb</div></div>
+    </div>
+
+
+
+    <div class="ws-section draw-section">
+      <div class="section-header"><span class="section-icon">✏️</span> <span class="section-label">Draw & Label — Show What You Know</span></div>
+      <p class="section-instr">👉 Use the box below to draw your answer. Label your drawing with words or arrows.</p>
+      <div class="draw-box"></div>
+    </div>
+
+
+    <div class="teacher-box">
+      <div class="teacher-icon">👩‍🏫</div>
+      <div>
+        <strong style="color:#f59e0b;">Teacher Guide — UDL Adaptations</strong><br>
+        Use real objects. For sensory: let students operate each machine. For visual: create simple machine cards with pictures + labels + real examples.<br>
+        <span style="font-size:0.85rem; color:#888;">🧠 Sensory: 🪛 Turn a screw into wood. 🪣 Lift a bucket with rope vs a pulley. 🚪 Turn a door knob (wheel & axle).</span>
+      </div>
+    </div>
+
+<div class="ws-footer">
+📄 Education Matters · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE<br>
+<span style="font-size:7.5pt;">NGSS Engineering Design + NYS Technology — Standard ETS2.A: Materials and Tools · Generated Jun 23, 2026</span>
+</div>
+
+</body>
+</html>

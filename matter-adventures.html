@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Matter Adventures — Solids, Liquids, and Gases Are Everywhere! | Education Matters Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',sans-serif; background:#0a0a0f; color:#d0d0d0; line-height:1.8; }
+.bg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0;
+  background:radial-gradient(ellipse at 20% 30%,rgba(99,102,241,0.06) 0%,transparent 50%),
+              radial-gradient(ellipse at 80% 70%,rgba(236,72,153,0.06) 0%,transparent 50%); }
+.container { position:relative; z-index:1; max-width:780px; margin:0 auto; padding:2rem 1.5rem; }
+.back { margin-bottom:1.5rem; }
+.back a { color:#818cf8; text-decoration:none; font-size:0.9rem; }
+.back a:hover { color:#f472b6; }
+
+/* Header */
+.post-header { text-align:center; padding:2rem 0; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:2rem; }
+.post-header .pi { font-size:2.5rem; margin-bottom:0.5rem; }
+.post-header h1 { font-size:1.8rem; font-weight:800;
+  background:linear-gradient(135deg,#818cf8,#f472b6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:0.5rem; line-height:1.3; }
+.post-header .meta { color:#888; font-size:0.85rem; display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap; }
+.post-header .meta span { background:rgba(255,255,255,0.04); padding:0.2rem 0.7rem; border-radius:20px; }
+
+/* Article Body */
+.article-body { margin-bottom:1.5rem; }
+.article-body h2 { font-size:1.3rem; color:#e0e0e0; margin:1.5rem 0 0.8rem; font-weight:700; }
+.article-body h3 { font-size:1.1rem; color:#d0d0d0; margin:1.2rem 0 0.5rem; font-weight:600; }
+.article-body p { color:#b0b0b0; margin-bottom:0.8rem; font-size:1rem; }
+.article-body strong { color:#c0c0ff; }
+.article-body ul, .article-body ol { color:#b0b0b0; margin:0.5rem 0 0.8rem 1.5rem; }
+.article-body li { margin-bottom:0.3rem; }
+.article-body blockquote { border-left:3px solid #818cf8; padding:0.6rem 1rem; margin:0.8rem 0; background:rgba(129,140,248,0.05); border-radius:0 8px 8px 0; color:#c0c0d0; font-style:italic; }
+
+/* Tip Box */
+.tip-box { background:rgba(99,102,241,0.06); border:1px solid rgba(99,102,241,0.12); border-radius:12px; padding:1.2rem 1.5rem; margin-bottom:1.5rem; color:#c0c0e0; font-size:0.95rem; line-height:1.6; }
+.tip-box strong { color:#a0a0ff; }
+
+/* Activity Section */
+.activity-section { background:rgba(244,114,182,0.06); border:1px solid rgba(244,114,182,0.12); border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; }
+.activity-header { font-size:1rem; font-weight:700; color:#f472b6; margin-bottom:1rem; }
+.activity-section h2 { font-size:1.1rem; color:#e0e0e0; margin:1rem 0 0.5rem; font-weight:600; }
+.activity-section p { color:#b0a0b0; margin-bottom:0.6rem; font-size:0.95rem; }
+.activity-section strong { color:#d0b0d0; }
+.activity-section table { width:100%; border-collapse:collapse; margin:0.8rem 0; }
+.activity-section td { border:1px solid rgba(255,255,255,0.1); padding:0.4rem 0.6rem; color:#b0a0b0; font-size:0.9rem; }
+.activity-section th { border:1px solid rgba(255,255,255,0.1); padding:0.4rem 0.6rem; color:#d0b0d0; font-weight:600; font-size:0.9rem; background:rgba(244,114,182,0.04); }
+
+/* Lesson Links */
+.lesson-links { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:1.5rem; margin-bottom:1.5rem; text-align:center; }
+.ll-header { font-size:1rem; font-weight:700; color:#e0e0e0; margin-bottom:1rem; }
+.ll-buttons { display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; }
+.ll-btn { display:inline-block; padding:0.6rem 1.2rem; border-radius:8px; font-weight:600; font-size:0.85rem; text-decoration:none; transition:opacity 0.2s; }
+.ll-btn:hover { opacity:0.8; }
+.ll-lesson { background:linear-gradient(135deg,#818cf8,#6366f1); color:#fff; }
+.ll-worksheet { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.12); color:#c0c0c0; }
+.ll-subject { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); color:#888; }
+
+/* Print button */
+.print-btn { display:inline-block; padding:0.5rem 1rem; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:8px; color:#aaa; cursor:pointer; font-size:0.85rem; margin-bottom:1.5rem; }
+.print-btn:hover { background:rgba(255,255,255,0.1); color:#fff; }
+
+footer { text-align:center; padding:2rem 0; border-top:1px solid rgba(255,255,255,0.06); color:#666; font-size:0.85rem; margin-top:2rem; }
+footer a { color:#818cf8; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+<div class="back"><a href="/">← Back to Education Matters</a> · <a href="/blog/">Blog</a></div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+<div class="post-header">
+  <div class="pi">⚛️</div>
+  <h1>Matter Adventures — Solids, Liquids, and Gases Are Everywhere!</h1>
+  <div class="meta">
+    <span>Education Matters Writer</span>
+    <span>📅 June 30, 2026</span>
+    <span>⏱️ 4 min</span>
+    <span>📂 Science</span>
+  </div>
+  <p style="color:#888;font-size:0.95rem;margin-top:0.8rem;max-width:600px;margin-left:auto;margin-right:auto;">Everything around you is made of tiny particles. Discover the secret life of solids, liquids, and gases!</p>
+</div>
+
+
+  <div class="article-body">
+    ### Have You Ever Wondered What a Rock Is Made Of?
+
+Look at the wall. Touch your desk. Feel the air moving when you wave your hand. **Everything — yes, everything — is made of tiny particles called atoms.** They're so small you can't see them, even with the strongest microscope!
+
+But here's the cool part: those particles behave differently depending on what they're in.
+
+  </div>
+  <div class="tip-box">
+    🧪 **Try this at home:** Fill a glass with water all the way to the top. Mark the water level. Put it in the freezer overnight. When you check it in the morning, the ice will be HIGHER than the line! The water particles spread apart as they freeze — that's why ice floats!
+
+  </div>
+  <div class="article-body">
+    ### 🧊 Solid — Particles Are Best Friends
+
+In a solid, particles are packed tightly together. They can wiggle a little, but they stay in place. That's why a rock keeps its shape no matter what container you put it in.
+
+**Examples:** Ice cube, desk, pencil, your phone, your bones!
+
+### 💧 Liquid — Particles Slide Past Each Other
+
+In a liquid, particles are close together but can slide past one another. That's why water takes the shape of whatever cup you pour it into.
+
+**Examples:** Water, juice, milk, rain, the Hudson River!
+
+### 💨 Gas — Particles Love to Zoom
+
+In a gas, particles are far apart and zoom around super fast in every direction. That's why air fills a balloon and why you can smell pizza from the next room!
+
+**Examples:** Air, steam, helium in balloons, the wind outside!
+
+  </div>
+  <div class="activity-section">
+    <div class="activity-header">🧪 Hands-On Learning Activity</div>
+    ## ✏️ Learning Activity: Particle Dance
+
+**Stand up and try this!**
+
+🧊 **Solid Dance:** Stand with your arms at your sides. Squeeze close together with friends. Try to wiggle but don't move your feet. You're a solid!
+
+💧 **Liquid Dance:** Stand arm's length apart. Walk slowly around the room, staying close but sliding past each other. You're a liquid!
+
+💨 **Gas Dance:** Spread out as far as you can. Run around the room in all directions — don't bump into anyone! You're a gas!
+
+**Discussion question:** What happens when ice melts? (Solid → Liquid!) What happens when water boils? (Liquid → Gas!)
+
+  </div>
+  <div class="lesson-links">
+    <div class="ll-header">📚 Related Learning Resources</div>
+    <div class="ll-buttons">
+      <a href="/worksheets/science/matter-particles.html" class="ll-btn ll-lesson">📖 Open Interactive Lesson →</a>
+      <a href="/worksheets/science/matter-particles-worksheet.html" class="ll-btn ll-worksheet">📄 Download Worksheet →</a>
+      <a href="/worksheets/science/" class="ll-btn ll-subject">📂 Browse All Science Resources →</a>
+    </div>
+  </div>
+  <div class="article-body">
+    ### 🧠 Think Deeper
+
+**Why does this matter for learning?** Understanding particles helps us understand everything from cooking (melting butter) to weather (evaporation) to medicine (how medicines dissolve in your body).
+
+**Real-world connection:** When you see steam rising from a hot drink, you're watching liquid water turn into gas. When you see frost on a window, you're watching water vapor turn directly into solid ice!
+
+  </div>
+
+<footer>
+<a href="/">Education Matters</a> · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE<br>
+<span style="font-size:0.8rem; color:#555;">Published June 30, 2026</span>
+</footer>
+</div>
+</body>
+</html>

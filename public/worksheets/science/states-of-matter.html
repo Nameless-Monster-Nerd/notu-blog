@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>States of Matter — Visual Sorting | Education Matters</title>
+<style>
+  @page { margin: 0.6in; size: letter; }
+  * { box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; font-size: 12pt; color: #222; line-height: 1.5; padding: 0.5in; max-width: 8.5in; margin: 0 auto; }
+  
+  .header { text-align: center; border-bottom: 3px solid #6366f1; padding-bottom: 0.2in; margin-bottom: 0.25in; }
+  .header h1 { font-size: 18pt; color: #111; margin-bottom: 0.1in; }
+  .header .schedule { font-size: 10pt; color: #666; display: flex; justify-content: center; gap: 0.3in; flex-wrap: wrap; }
+  .header .schedule span { background: #eef2ff; padding: 3px 10px; border-radius: 12px; font-weight: 600; color: #6366f1; }
+
+  .section { margin-bottom: 0.25in; }
+  .section h2 { font-size: 14pt; color: #6366f1; margin-bottom: 0.1in; border-left: 4px solid #6366f1; padding-left: 0.12in; }
+  .instructions { font-size: 11pt; color: #555; margin-bottom: 0.12in; }
+  
+  .visual-icon { font-size: 24pt; margin-right: 6px; vertical-align: middle; }
+
+  .sort-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.15in; margin-bottom: 0.2in; }
+  .sort-column { border: 2px solid #ddd; border-radius: 8px; padding: 0.12in; min-height: 1.5in; }
+  .sort-column h3 { text-align: center; font-size: 13pt; margin-bottom: 0.1in; }
+  .sort-column.solid { border-color: #6366f1; background: #f8f8ff; }
+  .sort-column.liquid { border-color: #06b6d4; background: #f0fdfe; }
+  .sort-column.gas { border-color: #a855f7; background: #faf5ff; }
+
+  .choice-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.12in; margin-bottom: 0.2in; }
+  .choice-item { border: 2px dashed #ccc; border-radius: 8px; padding: 0.15in; text-align: center; min-height: 0.6in; }
+  .choice-item img { font-size: 28pt; }
+
+  .answer-box { border: 2px solid #ddd; border-radius: 8px; padding: 0.12in 0.15in; min-height: 0.4in; margin-bottom: 0.12in; background: #fafafa; }
+  .answer-box.lined { background: repeating-linear-gradient(transparent, transparent 0.25in, #eee 0.25in, #eee 0.26in); }
+
+  .match-row { display: grid; grid-template-columns: 1fr 0.5in 1fr; align-items: center; margin-bottom: 0.1in; }
+  .match-left, .match-right { border: 1px solid #ddd; border-radius: 6px; padding: 0.1in; text-align: center; background: #fafafa; }
+  .match-center { text-align: center; font-size: 18pt; }
+
+  .teacher-note { background: #f9fafb; border-left: 4px solid #f472b6; padding: 0.12in 0.15in; margin-top: 0.2in; font-size: 10pt; color: #555; border-radius: 0 8px 8px 0; }
+  .teacher-note strong { color: #333; }
+
+  .footer { text-align: center; font-size: 9pt; color: #999; margin-top: 0.3in; border-top: 1px solid #eee; padding-top: 0.12in; }
+  
+  @media print { body { padding: 0; } .no-print { display: none; } }
+  button { background: #6366f1; color: #fff; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 10pt; margin-right: 8px; }
+  button:hover { background: #4f46e5; }
+</style>
+</head>
+<body>
+
+<div class="no-print" style="text-align:right; margin-bottom:0.15in;">
+  <button onclick="window.print()">🖨️ Print / Save PDF</button>
+</div>
+
+<div class="header">
+  <div style="font-size:20pt; margin-bottom:0.05in;">🔬🧊💧💨</div>
+  <h1>States of Matter — Visual Sorting</h1>
+  <div class="schedule">
+    <span>1️⃣ Watch</span>
+    <span>2️⃣ Sort</span>
+    <span>3️⃣ Match</span>
+    <span>4️⃣ Draw</span>
+    <span>5️⃣ Check</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🔍 Let's Learn</h2>
+  <p>Everything around us is made of matter. Matter comes in <strong>3 states</strong>:</p>
+  <div style="display:flex; gap:0.2in; margin:0.15in 0;">
+    <div style="flex:1; text-align:center; background:#f8f8ff; border-radius:8px; padding:0.1in;">
+      <div style="font-size:24pt;">🧊</div>
+      <strong>Solid</strong><br><span style="font-size:10pt; color:#666;">Stays the same shape</span>
+    </div>
+    <div style="flex:1; text-align:center; background:#f0fdfe; border-radius:8px; padding:0.1in;">
+      <div style="font-size:24pt;">💧</div>
+      <strong>Liquid</strong><br><span style="font-size:10pt; color:#666;">Takes the shape of its container</span>
+    </div>
+    <div style="flex:1; text-align:center; background:#faf5ff; border-radius:8px; padding:0.1in;">
+      <div style="font-size:24pt;">💨</div>
+      <strong>Gas</strong><br><span style="font-size:10pt; color:#666;">Fills the whole space</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>✂️ Sort the Pictures</h2>
+  <p class="instructions">👉 Cut out the pictures below. Glue each one into the correct column.</p>
+  
+  <div class="choice-grid">
+    <div class="choice-item">🧊 Ice cube<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+    <div class="choice-item">💧 Water in a cup<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+    <div class="choice-item">💨 Steam from a kettle<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+    <div class="choice-item">🪨 Rock<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+    <div class="choice-item">🥤 Juice<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+    <div class="choice-item">🎈 Air in a balloon<br><span style="font-size:9pt; color:#999;">Solid / Liquid / Gas?</span></div>
+  </div>
+
+  <div class="sort-grid">
+    <div class="sort-column solid">
+      <h3>🧊 Solid</h3>
+      <div style="height:1in;"></div>
+    </div>
+    <div class="sort-column liquid">
+      <h3>💧 Liquid</h3>
+      <div style="height:1in;"></div>
+    </div>
+    <div class="sort-column gas">
+      <h3>💨 Gas</h3>
+      <div style="height:1in;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>✏️ Draw & Label</h2>
+  <p class="instructions">👉 Draw one example of each state of matter in the boxes below.</p>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.15in;">
+    <div style="border:2px solid #6366f1; border-radius:8px; padding:0.1in; text-align:center; min-height:1in;">
+      <strong>🧊 Solid</strong>
+      <div class="answer-box" style="min-height:0.8in;"></div>
+    </div>
+    <div style="border:2px solid #06b6d4; border-radius:8px; padding:0.1in; text-align:center; min-height:1in;">
+      <strong>💧 Liquid</strong>
+      <div class="answer-box" style="min-height:0.8in;"></div>
+    </div>
+    <div style="border:2px solid #a855f7; border-radius:8px; padding:0.1in; text-align:center; min-height:1in;">
+      <strong>💨 Gas</strong>
+      <div class="answer-box" style="min-height:0.8in;"></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>🔗 Match the Word</h2>
+  <p class="instructions">👉 Draw a line from the word to its meaning.</p>
+  <div class="match-row">
+    <div class="match-left"><strong>Solid</strong></div>
+    <div class="match-center">➡️</div>
+    <div class="match-right">Takes the shape of its container</div>
+  </div>
+  <div class="match-row">
+    <div class="match-left"><strong>Liquid</strong></div>
+    <div class="match-center">➡️</div>
+    <div class="match-right">Fills the whole space</div>
+  </div>
+  <div class="match-row">
+    <div class="match-left"><strong>Gas</strong></div>
+    <div class="match-center">➡️</div>
+    <div class="match-right">Keeps its own shape</div>
+  </div>
+</div>
+
+<div class="teacher-note">
+<strong>👩‍🏫 Teacher Guide — UDL Adaptations:</strong><br>
+<strong>Engagement:</strong> Let students choose to cut & glue, draw, or point to answers. Use real objects (ice cube, water cup, balloon) for hands-on exploration.<br>
+<strong>Representation:</strong> Read instructions aloud. Use the visual icons (🧊💧💨) as non-verbal cues. Color-code the columns for easy identification.<br>
+<strong>Action/Expression:</strong> Students can point, circle, cut/paste, or verbalize answers. For non-verbal students, use a 3-card choice system (solid/liquid/gas cards).<br>
+<strong>Sensory Note:</strong> Let students hold an ice cube (solid), feel water (liquid), and feel air from a fan (gas) before starting.<br>
+<strong>Extension:</strong> Ask "What happens when ice melts?" (solid → liquid) and "What happens when water boils?" (liquid → gas).
+</div>
+
+<div class="footer">
+📄 Education Matters · Universal Design for Autism & Spectrum Learners · District 75 Aligned · NYC DOE
+</div>
+</body>
+</html>
